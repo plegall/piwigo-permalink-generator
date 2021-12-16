@@ -47,6 +47,7 @@ SELECT
 $categories = query2array($query);
 
 $missing_permalinks = array();
+$active_permalinks = array();
 foreach ($categories as $category)
 {
   if (empty($category['permalink']))

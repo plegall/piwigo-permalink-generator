@@ -6,6 +6,7 @@ Description: Automatic generation of your permalinks
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=
 Author: plg
 Author URI: http://piwigo.org
+Has Settings: true
 */
 
 if (!defined('PHPWG_ROOT_PATH'))
@@ -14,21 +15,6 @@ if (!defined('PHPWG_ROOT_PATH'))
 }
 
 define('PERMALINK_GENERATOR_PATH', PHPWG_PLUGINS_PATH.'permalink_generator/');
-
-/* Plugin admin */
-add_event_handler('get_admin_plugin_menu_links', 'pege_admin_menu');
-function pege_admin_menu($menu)
-{
-  array_push(
-    $menu,
-    array(
-      'NAME' => 'Permalink Generator',
-      'URL'  => get_root_url().'admin.php?page=plugin-permalink_generator',
-      )
-    );
-
-  return $menu;
-}
 
 add_event_handler('create_virtual_category', 'pege_create_virtual_category');
 function pege_create_virtual_category($category)
